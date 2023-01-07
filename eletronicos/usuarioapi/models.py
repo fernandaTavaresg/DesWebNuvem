@@ -1,7 +1,11 @@
 from django.db import models
 
+
+def upload_foto(instance, filename):
+    return f"{instance.id_usuario}--{filename}"
+
 class Usuario(models.Model):
-    id=models.AutoField(primary_key=True)
+    id_usuario=models.AutoField(primary_key=True)
     nome=models.CharField(max_length=100,blank=False, verbose_name='Nome')
     cpf=models.CharField(max_length=11, verbose_name='CPF')
     email=models.CharField(max_length=100, verbose_name='E-mail')
@@ -9,6 +13,8 @@ class Usuario(models.Model):
     cliente=models.BooleanField(verbose_name='Cliente')
     administrador=models.BooleanField(verbose_name='Fornecedor')
     senha=models.CharField(max_length=50)
+    foto=models.ImageField(upload_to=upload_foto, blank=True, null=True)
+
 
     class Meta:
         ordering = ['nome']
@@ -25,4 +31,3 @@ class Endereco(models.Model):
 
     class Meta:
         ordering = ['logradouro']
-
