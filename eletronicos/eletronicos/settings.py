@@ -1,5 +1,6 @@
 from decouple import config
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'apiprodutos',
+    'usuarioapi',
 ]
 
 MIDDLEWARE = [
@@ -68,11 +70,17 @@ WSGI_APPLICATION = 'eletronicos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbeletronicos',
-        'USER': 'admin',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': 3306,
+       # 'NAME': 'dbeletronicos',
+       # 'USER': 'admin',
+       # 'PASSWORD': '',
+       # 'HOST': '',
+       # 'PORT': 3306,
+
+       'NAME': config('NAME'),
+       'USER': config('USERNAME'),
+       'PASSWORD': config('PASSWORD'),
+       'HOST': config('HOST'),
+       'PORT': 3306,
 
     }
 }
