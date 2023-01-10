@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'apiprodutos',
     'usuarioapi',
+    'itempedidoapp',
+    'pedidoapp',
 ]
 
 MIDDLEWARE = [
