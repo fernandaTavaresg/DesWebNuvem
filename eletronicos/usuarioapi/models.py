@@ -19,6 +19,9 @@ class Usuario(models.Model):
     class Meta:
         ordering = ['nome']
 
+    def __str__(self):
+        return self.nome
+
 class Endereco(models.Model):
     id=models.AutoField(primary_key=True)
     id_usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, verbose_name='Usuario')
@@ -31,3 +34,6 @@ class Endereco(models.Model):
 
     class Meta:
         ordering = ['logradouro']
+    
+    def __str__(self):
+        return self.logradouro
