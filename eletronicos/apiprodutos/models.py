@@ -25,3 +25,6 @@ class Produto(models.Model):
 
     class Meta:
         ordering=['nome']
+  
+    def __str__(self):
+        return self.nome
