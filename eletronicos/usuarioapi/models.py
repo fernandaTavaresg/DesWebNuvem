@@ -11,7 +11,7 @@ class Usuario(models.Model):
     email=models.CharField(max_length=100, verbose_name='E-mail')
     data_nascimento=models.DateField(null=True, blank=True)
     cliente=models.BooleanField(verbose_name='Cliente')
-    administrador=models.BooleanField(verbose_name='Fornecedor')
+    administrador=models.BooleanField(verbose_name='Admistrador')
     senha=models.CharField(max_length=50)
     foto=models.ImageField(upload_to=upload_foto, blank=True, null=True)
 
