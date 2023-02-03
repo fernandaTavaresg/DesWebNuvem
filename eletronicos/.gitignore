@@ -1,0 +1,11 @@
+apiprodutos/__pycache__/
+apiprodutos/migrations
+eletronicos/__pycache__/
+itempedidoapp/__pycache__/
+itempedidoapp/migrations/
+pedidoapp/__pycache__/
+pedidoapp/migrations/
+usuarioapi/__pycache__/
+usuarioapi/migrations/
+
+
